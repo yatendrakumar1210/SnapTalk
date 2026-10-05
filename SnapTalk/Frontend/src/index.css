@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --st-primary: #00a884;
+    --st-primary-hover: #008069;
+    --st-dark-bg: #0b141a;
+    --st-dark-panel: #111b21;
+    --st-dark-card: #202c33;
+    --st-dark-hover: #2a3942;
+    --st-[#e9edef]: #e9edef;
+    --st-subtext: #8696a0;
+    --st-border: #222d34;
+    --st-blue-tick: #53bdeb;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: #0b141a;
+    color: #e9edef;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+}
+
+/* Custom SnapTalk Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 150, 160, 0.25);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 150, 160, 0.45);
+}
+
+/* SnapTalk Chat Wallpaper Pattern */
+.snaptalk-wallpaper-dark {
+  background-color: #0b141a;
+  background-image: radial-gradient(rgba(0, 168, 132, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.snaptalk-wallpaper-light {
+  background-color: #f0f2f5;
+  background-image: radial-gradient(rgba(0, 128, 105, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Message Bubble Tails */
+.st-bubble-out {
+  position: relative;
+  border-top-right-radius: 0px !important;
+}
+
+.st-bubble-in {
+  position: relative;
+  border-top-left-radius: 0px !important;
+}
+
+/* Smooth Fade & Pulse */
+@keyframes stPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.04); }
+}
+
+.animate-st-pulse {
+  animation: stPulse 2s infinite ease-in-out;
+}
